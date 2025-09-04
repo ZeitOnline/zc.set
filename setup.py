@@ -1,4 +1,3 @@
-from setuptools import find_packages
 from setuptools import setup
 
 
@@ -9,7 +8,7 @@ def read(filename):
 
 setup(
     name="zc.set",
-    version="1.0.dev0",
+    version="1.0+importlib",
     license='ZPL 2.1',
     long_description='\n\n'.join([
         read('CHANGES.txt'),
@@ -20,13 +19,9 @@ setup(
     description="Persistent sets are persistent objects that have the API of"
                 " standard Python sets",
     url="https://github.com/zopefoundation/zc.set/",
-    packages=find_packages('src'),
-    package_dir={'': 'src'},
-    namespace_packages=['zc'],
     include_package_data=True,
     python_requires='>=3.7',
     install_requires=[
-        'setuptools',
         'persistent',
     ],
     extras_require=dict(
